@@ -14,6 +14,11 @@ def process_image(input_path, output_path):
             output_data = remove(input_data)
             o.write(output_data)
 
+@app.route('/', methods=['GET'])
+def welcome():
+    return 'Welcome'
+
+
 @app.route('/upload', methods=['POST'])
 def upload_image():
     if 'file' not in request.files:
